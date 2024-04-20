@@ -5,17 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chia sẻ màn hình camera</title>
     <link rel="stylesheet" href="style.css">
-    
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <div id="container">
-        <div class="square">
-            <video id="video1" class="video" autoplay></video>
+    <ul class="tabs">
+        <li data-tab-target="#control_panel" class="active tab">BẢNG ĐIỀU KHIỂN</li>
+        <li data-tab-target="#recent_empty" class="tab">CHỖ TRỐNG HIỆN TẠI</li>
+        <li data-tab-target="#report" class="tab">BÁO CÁO</li>
+    </ul>
+
+    <div class="tab-content">
+        <!-- BẢNG ĐIỀU KHIỂN -->
+        <div id='control_panel' data-tab-content class="active">
+            <div class="textArea">
+                <textarea name="ticketID" id="ticketID" cols="20" rows="3">MÃ PHIẾU</textarea>
+                <textarea name="plate" id="plate" cols="20" rows="3">BIỂN SỐ</textarea>    
+                <textarea name="ticketType" id="ticketType" cols="20" rows="3">LOẠI PHIẾU</textarea>
+                <textarea name="vehicle" id="vehicle" cols="20" rows="3">LOẠI XE</textarea>
+                <textarea name="time" id="time" cols="20" rows="3">NGÀY GIỜ VÀO</textarea>
+            </div>
+        
+            <div id="videoContainer">
+                <div class="square">
+                    <video id="video1" class="video" autoplay style="height:580pxpx;width:800px"></video>
+                </div>
+            </div>
         </div>
-        <div class="square">
-            <video id="video2" class="video" autoplay></video>
+
+        <!-- CHỖ TRỐNG HIỆN TẠI -->
+        <div id="recent_empty" data-tab-content>
+
         </div>
+
+        <!-- BÁO CÁO -->
+        <div id="report" data-tab-content>
+            
+        </div>
+        
     </div>
-    <script src="camera.py"></script>
+    <script src="main.js"></script>
 </body>
 </html>
